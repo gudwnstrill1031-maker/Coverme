@@ -9,7 +9,17 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="CoverMe">
 <meta name="format-detection" content="telephone=no">
-<title>CoverMe — 앱 화면 시연</title>
+<title>CoverMe — 오늘 못 가요? 동료가 받아요.</title>
+<meta name="description" content="오늘 못 가요? 동료가 받아요. 교대근무 대타를 같은 매장 동료에게 요청하고 매니저가 승인하는 CoverMe">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CoverMe">
+<meta property="og:title" content="CoverMe — 오늘 못 가요? 동료가 받아요.">
+<meta property="og:description" content="교대근무 대타를 같은 매장 동료에게 요청하고, 매니저가 승인하는 서비스">
+<meta property="og:image" content="https://gudwnstrill1031-maker.github.io/Coverme/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://gudwnstrill1031-maker.github.io/Coverme/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
@@ -17,11 +27,11 @@
 <style>
 :root{
   --color-primary:#D62828; --color-text:#1B1A19; --color-muted:#6B6560; --color-line:#E6E0D8; --color-bg:#FBF8F4;
-  --color-success:#2E8B57; --color-warning:#D99A1E; --color-danger:#8F1D1D; --color-info:#6B6560;
+  --color-success:#27794A; --color-warning:#D99A1E; --color-danger:#8F1D1D; --color-info:#6B6560;
   --color-on-primary:#fff; --color-surface:#fff;
   --font-logo:"Black Han Sans","Pretendard","Malgun Gothic",sans-serif;
   --font-body:Pretendard,-apple-system,"Malgun Gothic",sans-serif;
-  --fs-xs:13px; --fs-sm:15px; --fs-md:17px; --fs-lg:22px; --fs-xl:28px;
+  --fs-xs:16px; --fs-sm:16px; --fs-md:17px; --fs-lg:22px; --fs-xl:28px;
   --sp-1:8px; --sp-2:16px; --sp-3:24px; --sp-4:32px;
   --radius:8px; --btn-h:48px;
   --shadow:0 1px 2px rgba(27,26,25,.06),0 8px 24px rgba(27,26,25,.06);
@@ -32,30 +42,7 @@ body{font-family:var(--font-body);font-size:var(--fs-sm);line-height:1.5;color:v
 button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
 :focus-visible{outline:2px solid var(--color-primary);outline-offset:2px}
 
-/* ───── 시연 무대 (실제 앱에는 없는 영역) ───── */
 .stage{min-height:100%;display:grid;grid-template-columns:300px 390px 300px;gap:var(--sp-4);justify-content:center;align-items:center;padding:var(--sp-3)}
-.panel h2{font-size:var(--fs-xs);font-weight:600;color:var(--color-muted);letter-spacing:.04em;margin-bottom:var(--sp-1)}
-.panel .brandline{font-family:var(--font-logo);font-size:var(--fs-lg);margin-bottom:var(--sp-3)}
-.scenes{list-style:none;display:flex;flex-direction:column;gap:4px}
-.scene{width:100%;display:flex;gap:var(--sp-1);align-items:center;text-align:left;padding:8px 12px;border-radius:var(--radius);border:1px solid transparent;color:var(--color-muted);font-size:var(--fs-sm)}
-@media (hover:hover){.scene:hover{background:rgba(255,255,255,.6)}}
-.scene .no{width:24px;height:24px;border-radius:50%;border:1px solid var(--color-line);background:var(--color-bg);display:grid;place-items:center;font-size:var(--fs-xs);font-weight:600;flex:none}
-.scene .who{font-size:var(--fs-xs);font-weight:600;padding:0 8px;border-radius:4px;background:var(--color-line);color:var(--color-text);flex:none}
-.scene[aria-current=true]{background:var(--color-surface);border-color:var(--color-text);color:var(--color-text);font-weight:600;box-shadow:var(--shadow)}
-.scene[aria-current=true] .no{background:var(--color-text);color:var(--color-bg);border-color:var(--color-text)}
-.sep{margin:var(--sp-2) 0 var(--sp-1);font-size:var(--fs-xs);color:var(--color-muted);font-weight:600}
-.panel.right .why{background:var(--color-surface);border:1px solid var(--color-line);border-radius:var(--radius);padding:var(--sp-2);box-shadow:var(--shadow)}
-.why .who{display:inline-block;font-size:var(--fs-xs);font-weight:600;padding:0 8px;border-radius:4px;background:var(--color-text);color:var(--color-bg);margin-bottom:var(--sp-1)}
-.why h3{font-size:var(--fs-md);font-weight:800;line-height:1.4;margin-bottom:var(--sp-1)}
-.why p{color:var(--color-muted);font-size:var(--fs-sm)}
-.why dl{margin-top:var(--sp-2);border-top:1px solid var(--color-line);padding-top:var(--sp-1)}
-.why dt{font-size:var(--fs-xs);font-weight:600;color:var(--color-muted);margin-top:var(--sp-1)}
-.why dd{font-size:var(--fs-sm)}
-.demo-next{margin-top:var(--sp-2);display:flex;gap:var(--sp-1)}
-.demo-next button{flex:1;height:40px;border-radius:var(--radius);border:1px solid var(--color-text);font-size:var(--fs-sm);font-weight:600;background:var(--color-surface)}
-.demo-next button.dark{background:var(--color-text);color:var(--color-bg)}
-.demo-next button:disabled{opacity:.35;cursor:default}
-.demo-note{margin-top:var(--sp-2);font-size:var(--fs-xs);color:var(--color-muted)}
 
 /* ───── 폰 ───── */
 .phone{width:390px;height:800px;background:var(--color-bg);border:8px solid var(--color-text);border-radius:48px;position:relative;overflow:hidden;box-shadow:0 24px 48px rgba(27,26,25,.18),0 2px 6px rgba(27,26,25,.12)}
@@ -69,7 +56,7 @@ button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
 
 .appbar{height:56px;padding:0 var(--sp-2);display:flex;align-items:center;justify-content:space-between;flex:none}
 .appbar .title{font-size:var(--fs-md);font-weight:800}
-.iconbtn{width:40px;height:40px;border-radius:var(--radius);display:grid;place-items:center;position:relative}
+.iconbtn{width:48px;height:48px;border-radius:var(--radius);display:grid;place-items:center;position:relative}
 @media (hover:hover){.iconbtn:hover{background:var(--color-line)}}
 .iconbtn .badge{position:absolute;top:8px;right:9px;width:8px;height:8px;border-radius:50%;background:var(--color-primary);border:2px solid var(--color-bg);box-sizing:content-box}
 .logo{display:flex;align-items:center;gap:8px}
@@ -98,7 +85,7 @@ h2.t{font-size:var(--fs-lg);font-weight:800;line-height:1.35;letter-spacing:-.01
 
 .label{font-size:var(--fs-xs);font-weight:600;color:var(--color-muted);margin:var(--sp-3) 0 var(--sp-1);display:flex;justify-content:space-between}
 .chips{display:flex;flex-wrap:wrap;gap:var(--sp-1)}
-.chip{height:40px;padding:0 var(--sp-2);border:1px solid var(--color-line);border-radius:var(--radius);background:var(--color-surface);font-size:var(--fs-sm);transition:background .12s,border-color .12s}
+.chip{height:48px;padding:0 var(--sp-2);border:1px solid var(--color-line);border-radius:var(--radius);background:var(--color-surface);font-size:var(--fs-sm);transition:background .12s,border-color .12s}
 .chip[aria-pressed=true]{border-color:var(--color-text);background:var(--color-text);color:var(--color-bg);font-weight:600}
 .chip.static{height:32px;font-size:var(--fs-xs);padding:0 12px;display:inline-flex;align-items:center;gap:6px;background:var(--color-bg)}
 .field{width:100%;height:var(--btn-h);border:1px solid var(--color-line);border-radius:var(--radius);padding:0 var(--sp-2);font:inherit;background:var(--color-surface);margin-top:var(--sp-1)}
@@ -114,7 +101,7 @@ h2.t{font-size:var(--fs-lg);font-weight:800;line-height:1.35;letter-spacing:-.01
 .btn-dark{background:var(--color-text);color:var(--color-bg)}
 .btn[disabled]{opacity:.4;cursor:default}
 .btn+.btn{margin-top:var(--sp-1)}
-.link{display:block;width:100%;height:40px;text-align:center;color:var(--color-muted);font-size:var(--fs-sm);text-decoration:underline;text-underline-offset:3px}
+.link{display:block;width:100%;height:48px;text-align:center;color:var(--color-muted);font-size:var(--fs-sm);text-decoration:underline;text-underline-offset:3px}
 .note{text-align:center;font-size:var(--fs-xs);color:var(--color-muted);margin-top:var(--sp-1)}
 
 .tabbar{flex:none;height:64px;border-top:1px solid var(--color-line);background:var(--color-surface);display:grid;grid-template-columns:repeat(4,1fr);padding-bottom:4px}
@@ -209,7 +196,7 @@ h2.t{font-size:var(--fs-lg);font-weight:800;line-height:1.35;letter-spacing:-.01
 .is-off{display:none!important}
 .ml-empty{font-size:var(--fs-sm);color:var(--color-muted);text-align:center;padding:var(--sp-2) 0}
 /* 동료 · 지원 정보 */
-#cats .chip,#pers .chip{height:40px}
+#cats .chip,#pers .chip{height:48px}
 
 
 /* 로그인 · 회원가입 */
@@ -220,7 +207,7 @@ h2.t{font-size:var(--fs-lg);font-weight:800;line-height:1.35;letter-spacing:-.01
 .fld .field.invalid{border-color:var(--color-danger)}
 .pw{position:relative}
 .pw .field{padding-right:72px}
-.pwtoggle{position:absolute;right:4px;bottom:4px;height:40px;padding:0 12px;font-size:var(--fs-xs);font-weight:600;color:var(--color-muted);border-radius:var(--radius)}
+.pwtoggle{position:absolute;right:0;bottom:0;height:48px;padding:0 12px;font-size:var(--fs-xs);font-weight:600;color:var(--color-muted);border-radius:var(--radius)}
 @media (hover:hover){.pwtoggle:hover{color:var(--color-text)}}
 .msg{font-size:var(--fs-xs);color:var(--color-muted);margin-top:4px;min-height:18px}
 .msg.err{color:var(--color-danger)}
@@ -237,11 +224,6 @@ h2.t{font-size:var(--fs-lg);font-weight:800;line-height:1.35;letter-spacing:-.01
 /* ───── 좁은 화면: 폰 크기로 ───── */
 @media (max-width:1060px){
   .stage{grid-template-columns:390px;grid-auto-rows:auto;gap:var(--sp-2);padding:var(--sp-2)}
-  .panel.right{order:3}
-  .scenes{flex-direction:row;overflow-x:auto;padding-bottom:var(--sp-1)}
-  .scene{width:auto;white-space:nowrap}
-  .sep{display:none}
-  .panel .brandline{margin-bottom:var(--sp-1)}
 }
 @media (max-width:440px){
   .stage{grid-template-columns:100%;padding:0;gap:0}
@@ -249,8 +231,6 @@ h2.t{font-size:var(--fs-lg);font-weight:800;line-height:1.35;letter-spacing:-.01
   #s-join .tri{margin-top:var(--sp-2);gap:var(--sp-2)}
   #s-join .rolebtn{min-height:104px;gap:8px}
   #s-join .login{margin-top:var(--sp-2)}
-  .panel.left{padding:var(--sp-2) var(--sp-2) 0}
-  .panel.right{padding:var(--sp-2)}
   .phone{width:100%;height:calc(100dvh - 132px);min-height:640px;border-width:0;border-radius:0;box-shadow:none}
 }
 @media (max-width:440px) and (max-height:700px){
@@ -272,7 +252,7 @@ input:checked+.cs-box{background:var(--color-text);border-color:var(--color-text
 input:checked+.cs-box svg{opacity:1}
 input:focus-visible+.cs-box{outline:2px solid var(--color-text);outline-offset:2px}
 .cs-tag{font-weight:800;margin-right:6px}
-.cs-view{flex:none;min-width:48px;height:44px;padding:0 8px;font-size:var(--fs-xs);font-weight:600;color:var(--color-muted);text-decoration:underline;text-underline-offset:3px}
+.cs-view{flex:none;min-width:48px;height:48px;padding:0 8px;font-size:var(--fs-xs);font-weight:600;color:var(--color-muted);text-decoration:underline;text-underline-offset:3px}
 .cs-sum{margin:0 4px 4px 40px;padding:12px;border-radius:var(--radius);background:var(--color-surface);border:1px solid var(--color-line);font-size:var(--fs-xs);color:var(--color-muted);line-height:1.6}
 .cs-sum dt{display:inline;font-weight:800;color:var(--color-text)}
 .cs-sum dt::after{content:" "}
@@ -296,39 +276,27 @@ input:focus-visible+.cs-box{outline:2px solid var(--color-text);outline-offset:2
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 button,a,label{-webkit-tap-highlight-color:transparent}
 button{touch-action:manipulation}
-.demo-fab,.demo-close{display:none}
 @media (min-width:601px){
   .phone{position:sticky;top:16px;align-self:start;height:min(800px,calc(100vh - 48px));height:min(800px,calc(100dvh - 48px));min-height:560px}
-  .panel.right{position:sticky;top:16px;align-self:start}
 }
 @media (max-width:600px){
   html,body{overflow:hidden;overscroll-behavior:none;height:100%}
   body{background:var(--color-bg)}
   .stage{display:block;height:100vh;height:100dvh;min-height:0;padding:0}
-  .panel.left,.panel.right{display:none}
   .phone{position:fixed;inset:0;width:100%;height:100vh;height:100dvh;min-height:0;border:0;border-radius:0;box-shadow:none}
   .statusbar{display:none}
   .screen,.docview{padding-top:calc(env(safe-area-inset-top,0px) + 28px)}
-  .demo-fab{display:block;position:absolute;top:calc(env(safe-area-inset-top,0px) + 3px);left:50%;transform:translateX(-50%);z-index:6;height:22px;padding:0 12px;border-radius:11px;border:1px solid var(--color-line);background:var(--color-surface);color:var(--color-muted);font-size:11px;font-weight:600;letter-spacing:.02em}
   .bottom{padding-bottom:calc(var(--sp-2) + env(safe-area-inset-bottom,0px))}
   .tabbar{height:calc(64px + env(safe-area-inset-bottom,0px));padding-bottom:calc(4px + env(safe-area-inset-bottom,0px))}
   .sheet{padding-bottom:calc(var(--sp-3) + env(safe-area-inset-bottom,0px))}
   .toast{bottom:calc(96px + env(safe-area-inset-bottom,0px))}
   .field{font-size:16px}
-  .iconbtn{width:44px;height:44px}
-  .pwtoggle{height:44px;min-width:56px}
-  .link{min-height:44px}
+  .iconbtn{width:48px;height:48px}
+  .pwtoggle{height:48px;min-width:56px}
+  .link{min-height:48px}
   .tl{padding:12px 6px;margin:-12px -6px}
   .body{overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
   #a-home .hero img{height:clamp(110px,24dvh,206px);object-fit:contain}
-  body.demo-open .stage{position:fixed;inset:0;z-index:50;overflow:auto;height:auto;background:#EFE9E1;padding:calc(env(safe-area-inset-top,0px) + 12px) 16px calc(24px + env(safe-area-inset-bottom,0px))}
-  body.demo-open .phone{display:none}
-  body.demo-open .panel.left,body.demo-open .panel.right{display:block;padding:0}
-  body.demo-open .panel.right{margin-top:20px}
-  body.demo-open .scenes{flex-direction:column;overflow:visible}
-  body.demo-open .scene{white-space:normal;width:100%}
-  body.demo-open .sep{display:block}
-  body.demo-open .demo-close{display:block;position:sticky;top:0;z-index:2;margin:0 0 12px auto;height:44px;padding:0 20px;border-radius:22px;background:var(--color-text);color:var(--color-bg);font-size:14px;font-weight:600}
 }
 @media (max-width:600px) and (max-height:700px){
   #a-home .hero img{height:clamp(90px,17dvh,206px)}
@@ -336,19 +304,25 @@ button{touch-action:manipulation}
   #l-consent .cs-all{margin-top:var(--sp-2);min-height:52px}
   #l-consent .cs-sum{padding:10px 12px;line-height:1.5}
 }
+
+/* ───── 실제 사용 화면: 폰은 화면 전체, PC는 가운데 한 칸 ───── */
+html,body{height:100%}
+body{background:var(--color-bg)}
+.stage{display:block;height:100vh;height:100dvh;min-height:0;padding:0;background:#EFE9E1}
+.phone{position:relative;width:100%;max-width:480px;height:100vh;height:100dvh;min-height:0;margin:0 auto;border:0;border-radius:0;box-shadow:0 0 0 1px var(--color-line);top:auto}
+.statusbar{display:none}
+.screen,.docview{padding-top:calc(env(safe-area-inset-top,0px) + 8px)}
+@media (max-width:600px){
+  html,body{overflow:hidden;overscroll-behavior:none}
+  body{background:var(--color-bg)}
+  .phone{position:fixed;inset:0;max-width:none;box-shadow:none}
+}
 </style>
 </head>
 <body>
 
 <main class="stage">
 
-  <!-- 왼쪽: 시연 장면 목록 -->
-  <aside class="panel left" aria-label="시연 장면">
-    <button type="button" class="demo-close" id="demo-close">앱으로 돌아가기</button>
-    <div class="brandline">CoverMe</div>
-    <h2>시연 장면 (실제 앱에는 없는 영역)</h2>
-    <ul class="scenes" id="scenes"></ul>
-  </aside>
 
   <!-- 가운데: 폰 -->
   <div class="phone" id="phone" aria-label="CoverMe 앱 화면">
@@ -366,7 +340,7 @@ button{touch-action:manipulation}
       <header class="appbar">
         <button class="iconbtn backbtn" aria-label="뒤로" data-go="@logout"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B1A19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
         <div class="logo"><svg viewBox="0 0 40 48" aria-hidden="true"><g stroke="#1B1A19" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M12 6h16l-2 8a8 8 0 0 1-12 0z" fill="#FBF8F4"/><path d="M10 14h20l4 30H6z" fill="#FBF8F4"/><circle cx="20" cy="30" r="8" fill="#D62828"/></g><text x="20" y="33" text-anchor="middle" font-family="Pretendard,sans-serif" font-weight="800" font-size="7" fill="#fff">SOS</text></svg><span class="wordmark">CoverMe</span></div>
-        <span style="width:40px"></span>
+        <span style="width:48px"></span>
       </header>
       <div class="body">
         <h1><em>오늘 못 가요?</em><br>동료가 받아요.</h1>
@@ -393,7 +367,7 @@ button{touch-action:manipulation}
       <header class="appbar">
         <button class="iconbtn" aria-label="뒤로" data-go="s-join"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B1A19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
         <div class="logo"><svg viewBox="0 0 40 48" aria-hidden="true"><g stroke="#1B1A19" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M12 6h16l-2 8a8 8 0 0 1-12 0z" fill="#FBF8F4"/><path d="M10 14h20l4 30H6z" fill="#FBF8F4"/><circle cx="20" cy="30" r="8" fill="#D62828"/></g><text x="20" y="33" text-anchor="middle" font-family="Pretendard,sans-serif" font-weight="800" font-size="7" fill="#fff">SOS</text></svg><span class="wordmark">CoverMe</span></div>
-        <span style="width:40px"></span>
+        <span style="width:48px"></span>
       </header>
       <div class="body">
         <h1><em>어서 와요.</em><br>로그인하고 이어가요.</h1>
@@ -422,7 +396,7 @@ button{touch-action:manipulation}
       <header class="appbar">
         <button class="iconbtn" aria-label="뒤로" data-go="s-join"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B1A19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
         <span class="title">회원가입</span>
-        <span style="width:40px"></span>
+        <span style="width:48px"></span>
       </header>
       <div class="body">
         <h2 class="t">세 가지만 알려주세요</h2>
@@ -456,7 +430,7 @@ button{touch-action:manipulation}
       <header class="appbar">
         <button class="iconbtn" aria-label="뒤로" data-go="l-signup"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B1A19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
         <span class="title">약관 동의</span>
-        <span style="width:40px"></span>
+        <span style="width:48px"></span>
       </header>
       <div class="body">
         <h2 class="t">가입 전에<br>동의가 필요해요</h2>
@@ -478,14 +452,14 @@ button{touch-action:manipulation}
     </section>
 
     <section class="screen" id="l-log" data-tab="log">
-      <header class="appbar"><span class="title" style="font-size:var(--fs-lg)">내 기록</span><span style="width:40px"></span></header>
+      <header class="appbar"><span class="title" style="font-size:var(--fs-lg)">내 기록</span><span style="width:48px"></span></header>
       <div class="body">
         <div class="lg-empty"><b>아직 기록이 없어요</b>대타를 요청하거나 지원하면<br>여기에 차곡차곡 쌓여요.</div>
       </div>
     </section>
 
     <section class="screen" id="s-me" data-tab="me">
-      <header class="appbar"><span class="title" style="font-size:var(--fs-lg)">나</span><span style="width:40px"></span></header>
+      <header class="appbar"><span class="title" style="font-size:var(--fs-lg)">나</span><span style="width:48px"></span></header>
       <div class="body">
         <div class="card noti read" style="margin-top:var(--sp-1)">
           <div class="av mute" id="me-av">?</div>
@@ -495,7 +469,6 @@ button{touch-action:manipulation}
           <button class="me-row" data-act="rerole">역할 다시 고르기<span id="me-role"></span></button>
           <button class="me-row" data-doc="dv-terms">이용약관<span>보기</span></button>
           <button class="me-row" data-doc="dv-privacy">개인정보 수집·이용 동의<span>보기</span></button>
-          <button class="me-row" data-toast="시연 앱에서는 문의 창구가 열리지 않아요">문의하기<span>시연용</span></button>
           <button class="me-row" data-go="@logout">로그아웃</button>
           <button class="me-row" data-act="withdraw-ask">회원 탈퇴</button>
         </div>
@@ -536,7 +509,7 @@ button{touch-action:manipulation}
       <header class="appbar">
         <button class="iconbtn" aria-label="뒤로" data-go="a-home"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B1A19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
         <span class="title">대타 요청</span>
-        <span style="width:40px"></span>
+        <span style="width:48px"></span>
       </header>
       <div class="body">
         <h2 class="t">어느 근무를 맡길까요?</h2>
@@ -567,7 +540,7 @@ button{touch-action:manipulation}
       <header class="appbar">
         <button class="iconbtn" aria-label="홈으로" data-go="a-home"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B1A19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
         <span class="title">요청 현황</span>
-        <span style="width:40px"></span>
+        <span style="width:48px"></span>
       </header>
       <div class="body">
         <div class="card shift">
@@ -586,7 +559,7 @@ button{touch-action:manipulation}
       <header class="appbar">
         <button class="iconbtn" aria-label="뒤로" data-go="a-status"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B1A19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
         <span class="title">요청 현황</span>
-        <span style="width:40px"></span>
+        <span style="width:48px"></span>
       </header>
       <div class="body">
         <h2 class="t" style="margin-top:8px">아직 대타를 못 구했어요</h2>
@@ -603,7 +576,7 @@ button{touch-action:manipulation}
       <header class="appbar">
         <button class="iconbtn" aria-label="뒤로" data-go="@cfrom"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B1A19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
         <span class="title">지원 정보</span>
-        <span style="width:40px"></span>
+        <span style="width:48px"></span>
       </header>
       <div class="body">
         <h2 class="t">어떤 일을 도울 수 있어요?</h2>
@@ -622,18 +595,8 @@ button{touch-action:manipulation}
 
     <!-- 동료 · 알림 -->
     <section class="screen" id="c-inbox" data-tab="noti">
-      <header class="appbar"><button class="iconbtn" aria-label="뒤로" data-go="a-home"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B1A19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><span class="title">알림</span><span style="width:40px"></span></header>
+      <header class="appbar"><button class="iconbtn" aria-label="뒤로" data-go="a-home"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B1A19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><span class="title">알림</span><span style="width:48px"></span></header>
       <div class="body">
-        <button class="card noti" data-go="c-detail">
-          <div class="av">지</div>
-          <div><b>지수님이 대타를 찾고 있어요</b><span>오늘 14:00 ~ 20:00 · 홀 · 방금</span></div>
-          <i class="un" aria-label="새 알림"></i>
-        </button>
-        <div class="label"><span>이전 알림</span></div>
-        <div class="card noti read">
-          <div class="av mute">민</div>
-          <div><b>민준님의 지난주 요청이 채워졌어요</b><span>금요일 · 마감</span></div>
-        </div>
         <div class="card noti read">
           <div class="av mute">C</div>
           <div><b>CoverMe에 오신 걸 환영해요</b><span>우리 매장 동료가 모여 있어요</span></div>
@@ -646,7 +609,7 @@ button{touch-action:manipulation}
       <header class="appbar">
         <button class="iconbtn" aria-label="뒤로" data-go="c-inbox"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B1A19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
         <span class="title">대타 요청</span>
-        <span style="width:40px"></span>
+        <span style="width:48px"></span>
       </header>
       <div class="body">
         <h2 class="t">지수님 자리, 채워주시겠어요?</h2>
@@ -669,7 +632,7 @@ button{touch-action:manipulation}
 
     <!-- 동료 · 지원 완료 -->
     <section class="screen" id="c-done">
-      <header class="appbar"><span style="width:40px"></span><span class="title">지원 완료</span><span style="width:40px"></span></header>
+      <header class="appbar"><span style="width:48px"></span><span class="title">지원 완료</span><span style="width:48px"></span></header>
       <div class="body">
         <div class="bigcheck"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
         <h2 class="t">지원했어요</h2>
@@ -686,7 +649,7 @@ button{touch-action:manipulation}
 
     <!-- 매니저 · 승인 요청 -->
     <section class="screen" id="m-review" data-tab="noti">
-      <header class="appbar"><button class="iconbtn" aria-label="뒤로" data-go="m-list"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B1A19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><span class="title">승인 요청</span><span style="width:40px"></span></header>
+      <header class="appbar"><button class="iconbtn" aria-label="뒤로" data-go="m-list"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B1A19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><span class="title">승인 요청</span><span style="width:48px"></span></header>
       <div class="body">
         <div class="eyebrow">오늘 14:00 ~ 20:00 · 홀 · 지수님 자리</div>
         <div class="card">
@@ -712,7 +675,7 @@ button{touch-action:manipulation}
 
     <!-- 매니저 · 승인 완료 -->
     <section class="screen" id="m-done">
-      <header class="appbar"><span style="width:40px"></span><span class="title">승인 완료</span><span style="width:40px"></span></header>
+      <header class="appbar"><span style="width:48px"></span><span class="title">승인 완료</span><span style="width:48px"></span></header>
       <div class="body">
         <div class="bigcheck"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
         <h2 class="t">하은님으로 확정했어요</h2>
@@ -723,7 +686,7 @@ button{touch-action:manipulation}
 
     <!-- 매니저 · 승인 리스트 -->
     <section class="screen" id="m-list" data-tab="noti">
-      <header class="appbar"><span class="title" style="font-size:var(--fs-lg)">승인 리스트</span><span style="width:40px"></span></header>
+      <header class="appbar"><span class="title" style="font-size:var(--fs-lg)">승인 리스트</span><span style="width:48px"></span></header>
       <div class="body">
         <div class="label" style="margin-top:var(--sp-1)"><span>승인 대기</span><span id="ml-n">1건</span></div>
         <button class="card noti" id="ml-wait" data-go="m-review">
@@ -743,9 +706,8 @@ button{touch-action:manipulation}
     </section>
 
 <div class="docview" id="dv-terms" role="dialog" aria-modal="true" aria-label="이용약관 전문">
-      <header class="appbar"><button class="iconbtn" aria-label="뒤로" data-docclose><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B1A19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><span class="title">이용약관</span><span style="width:40px"></span></header>
+      <header class="appbar"><button class="iconbtn" aria-label="뒤로" data-docclose><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B1A19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><span class="title">이용약관</span><span style="width:48px"></span></header>
       <div class="body"><div class="doc" style="margin-top:0">
-          <p class="notice" style="margin-top:0">본 내용은 시연용 예시입니다. 정식 출시 전에 법률 전문가의 검토를 받아 수정하여야 합니다.</p>
           <p class="when">시행일: 2026년 11월 1일</p>
           <h3>제1조 (목적)</h3>
           <p>이 약관은 CoverMe를 운영하는 자(이하 "운영자")가 제공하는 근무 대타 연결 서비스(이하 "서비스")의 이용과 관련하여, 운영자와 이용자 간의 권리·의무 및 책임사항, 그 밖에 필요한 사항을 규정함을 목적으로 합니다.</p>
@@ -774,9 +736,8 @@ button{touch-action:manipulation}
       <div class="bottom"><button class="btn btn-dark" data-docclose>닫기</button></div>
     </div>
     <div class="docview" id="dv-privacy" role="dialog" aria-modal="true" aria-label="개인정보 수집·이용 동의 전문">
-      <header class="appbar"><button class="iconbtn" aria-label="뒤로" data-docclose><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B1A19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><span class="title">개인정보 수집·이용 동의</span><span style="width:40px"></span></header>
+      <header class="appbar"><button class="iconbtn" aria-label="뒤로" data-docclose><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B1A19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><span class="title">개인정보 수집·이용 동의</span><span style="width:48px"></span></header>
       <div class="body"><div class="doc" style="margin-top:0">
-          <p class="notice" style="margin-top:0">본 내용은 시연용 예시입니다. 정식 출시 전에 법률 전문가의 검토를 받아 수정하여야 합니다.</p>
           <p class="when">시행일: 2026년 11월 1일</p>
           <p>운영자는 「개인정보 보호법」에 따라 아래와 같이 개인정보의 수집·이용에 대한 동의를 받고자 합니다.</p>
           <h3>1. 수집하는 개인정보의 항목</h3>
@@ -798,12 +759,11 @@ button{touch-action:manipulation}
           <h3>5. 동의 거부 권리 및 불이익</h3>
           <p>이용자는 개인정보의 수집·이용에 대한 <b>동의를 거부할 권리</b>가 있습니다. 다만 필수 항목에 대한 동의를 거부하는 경우 회원가입이 제한됩니다.</p>
           <h3>6. 문의</h3>
-          <p>개인정보에 관한 문의는 앱 내 '문의하기'를 통하여 접수할 수 있습니다.</p>
+          <p>개인정보에 관한 문의는 서비스 운영자에게 접수할 수 있습니다.</p>
         </div></div>
       <div class="bottom"><button class="btn btn-dark" data-docclose>닫기</button></div>
     </div>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <button type="button" class="demo-fab" id="demo-fab" aria-label="시연 메뉴 열기">시연 메뉴</button>
 
     <!-- 공통 시트: 요청 취소 -->
     <div class="scrim" id="scrim" role="dialog" aria-modal="true" aria-labelledby="sh-t">
@@ -816,21 +776,6 @@ button{touch-action:manipulation}
     </div>
   </div>
 
-  <!-- 오른쪽: 장면 설명 -->
-  <aside class="panel right" aria-live="polite">
-    <h2>지금 보는 장면</h2>
-    <div class="why">
-      <span class="who" id="w-who"></span>
-      <h3 id="w-title"></h3>
-      <p id="w-desc"></p>
-      <dl><dt>이 화면의 결정 하나</dt><dd id="w-decide"></dd></dl>
-    </div>
-    <div class="demo-next">
-      <button id="prev">← 이전 장면</button>
-      <button id="next" class="dark">다음 장면 →</button>
-    </div>
-    <p class="demo-note">이름(지수·하은·민준)과 "근무 8개월"은 시연용 예시예요.</p>
-  </aside>
 </main>
 
 <script>
@@ -932,7 +877,6 @@ function show(id,step){
   const b=$('.screen.on .body'); if(b) b.scrollTop=0;
 }
 function goScene(i){
-  document.body.classList.remove('demo-open');
   idx=i; AUTH=i>=JOIN_IN; $('#s-join').dataset.auth=AUTH?'in':'out';
   const sc=ALL[i];
   if(sc.id==='m-done') APPROVED=true; else if(sc.id==='m-review') APPROVED=false; else if(sc.id==='m-list') APPROVED=sc.step===1;
@@ -950,22 +894,7 @@ function goId(id,reset){
   if(i<0) return;
   goScene(i);
 }
-function paint(){
-  const sc=ALL[idx];
-  $$('#scenes .scene').forEach((b,i)=>b.setAttribute('aria-current',i===idx));
-  $('#w-who').textContent=sc.who; $('#w-title').textContent=sc.title; $('#w-desc').textContent=sc.desc; $('#w-decide').textContent=sc.decide;
-  $('#prev').disabled=idx===0; $('#next').disabled=idx>=SCENES.length-1;
-  if(idx>=SCENES.length-1) $('#next').textContent='처음으로'; else $('#next').textContent='다음 장면 →';
-  $('#next').disabled=false; $('#prev').disabled=idx===0;
-}
-/* 목록 그리기 */
-$('#scenes').innerHTML=ALL.map((s,i)=>{
-  const sep=i===SCENES.length?'<li class="sep" role="presentation">그 밖의 화면</li>':'';
-  return `${sep}<li><button class="scene" data-scene="${i}"><span class="no">${i<SCENES.length?i+1:(s.mark||'!')}</span><span class="who">${s.who}</span>${s.name}</button></li>`;
-}).join('');
-$('#scenes').addEventListener('click',e=>{const b=e.target.closest('[data-scene]'); if(b){cFrom='s-join';goScene(+b.dataset.scene);}});
-$('#next').onclick=()=>{cFrom='s-join';goScene(idx>=SCENES.length-1?0:Math.min(idx+1,SCENES.length-1));};
-$('#prev').onclick=()=>{cFrom='s-join';goScene(Math.max(idx-1,0));};
+function paint(){}
 
 /* 폰 안 버튼 */
 $('#phone').addEventListener('click',e=>{
@@ -1036,7 +965,7 @@ $$('.pwtoggle').forEach(b=>b.addEventListener('click',()=>{
 syncLogin(); syncSignup();
 
 
-/* 가입 정보 저장과 로그인 확인 (시연용: 이 화면을 닫으면 사라져요) */
+/* 가입 정보 저장과 로그인 확인 */
 let ACCOUNT=null;
 $('#su-done').addEventListener('click',()=>{
   ACCOUNT={name:$('#su-name').value.trim(),email:$('#su-email').value.trim().toLowerCase(),pw:$('#su-pw').value,fresh:true};
@@ -1072,7 +1001,7 @@ syncConsent();
 function closeDocs(){ $$('.docview.on').forEach(d=>d.classList.remove('on')); }
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeDocs(); });
 
-/* ───── 토스트 · 탭바 · 나 화면 · 시연 메뉴 ───── */
+/* ───── 토스트 · 탭바 · 나 화면 ───── */
 let toastT=null;
 function toast(msg){ const t=$('#toast'); t.textContent=msg; t.classList.add('on'); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove('on'),2200); }
 function tabDest(k){ const m=MODE==='manager'; return k==='home'?(m?'m-list':'a-home'):k==='noti'?(m?'m-list':'c-inbox'):k==='log'?'l-log':'s-me'; }
@@ -1099,8 +1028,6 @@ $('#phone').addEventListener('click',e=>{
   }
   const tt=e.target.closest('[data-toast]'); if(tt && !tt.dataset.go) toast(tt.dataset.toast);
 });
-$('#demo-fab').addEventListener('click',()=>document.body.classList.add('demo-open'));
-$('#demo-close').addEventListener('click',()=>document.body.classList.remove('demo-open'));
 
 /* ───── 기기 뒤로 가기: 앱 화면 안에서 먼저 처리 ───── */
 (function(){
@@ -1109,11 +1036,10 @@ $('#demo-close').addEventListener('click',()=>document.body.classList.remove('de
   try{ history.replaceState({coverme:0},''); mark(); }catch(e){ return; }
   window.addEventListener('popstate',()=>{
     if(leaving){ return; }
-    if(document.body.classList.contains('demo-open')){ document.body.classList.remove('demo-open'); mark(); return; }
     if($$('.docview.on').length){ closeDocs(); mark(); return; }
     if($('#me-ask.on')){ $('#me-ask').classList.remove('on'); mark(); return; }
     const sc=document.querySelector('.screen.on');
-    const bk=sc&&sc.querySelector('.appbar [data-go][aria-label="뒤로"]');
+    const bk=sc&&sc.querySelector('.appbar [data-go][aria-label="뒤로"],.appbar [data-go][aria-label="홈으로"]');
     if(bk){ mark(); bk.click(); return; }
     const atRoot=sc&&sc.id==='s-join'&&!AUTH;
     if(atRoot){ leaving=true; history.back(); return; }
